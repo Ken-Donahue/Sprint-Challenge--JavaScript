@@ -155,8 +155,14 @@ function getContact(graduates){
 console.log(getContact(graduates));
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni = [];
-console.log(unisWithUni);
+function getUnis(graduates){
+  const unisWithUni = 
+  graduates.filter((item)=>{
+    return item.university.includes("Uni");
+  });
+  return unisWithUni;
+}
+console.log(getUnis(graduates));
 
 // ==== ADVANCED Array Methods ====
 
@@ -276,7 +282,7 @@ function totalPop(zooAnimals){
   const populationTotal = 
   zooAnimals.reduce((accumulator, item)=>{
   return accumulator + item.population;
-  });
+  }, 0);
   return populationTotal;
 }
 console.log(totalPop(zooAnimals));
